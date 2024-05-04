@@ -1,0 +1,6 @@
+@WebApplicationMatensa_HostAddress = http://localhost:5243
+
+GET {{WebApplicationMatensa_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
