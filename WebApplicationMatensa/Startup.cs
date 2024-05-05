@@ -10,7 +10,6 @@ using WebApplicationMatensa.Data.BaseRepository;
 using WebApplicationMatensa.Data.Repository.Implementation;
 using WebApplicationMatensa.Data.Repository.Interface;
 using WebApplicationMatensa.Models.Entity;
-using WebApplicationMatensa.Repositories;
 using WebApplicationMatensa.Services.Implementation;
 using WebApplicationMatensa.Services.Interface;
 
@@ -29,9 +28,7 @@ namespace WebApplicationMatensa
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-;
             services.AddScoped<IWalletRepository, WalletRepository>();
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             services.AddScoped<IAuthService,AuthService>();
             // For Entity Framework
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnStr")));

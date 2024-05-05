@@ -57,6 +57,10 @@ namespace WebApplicationMatensa.Controllers.User
             {
                 return new Response { Success = false, Message = "User does not have wallet" };
             }
+            if(model.Amount> senderWallet.Balance)
+            {
+                return new Response { Success = false, Message = "User does not have enough money" };
+            }
             try
             {
                 senderWallet.Withdraw(model.Amount);

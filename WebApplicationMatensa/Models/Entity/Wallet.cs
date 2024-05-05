@@ -21,12 +21,16 @@ namespace WebApplicationMatensa.Models.Entity
 
         public void AddBalance(float Amount)
         {
-            this.Balance = this.Balance + Amount;
+            var balance = this.Balance + Amount;
+            if (balance > 0)
+                this.Balance = balance;
         }
 
         public void Withdraw(float Amount)
         {
-            this.Balance = this.Balance - Amount;
+            var balance = this.Balance - Amount;
+            if (balance > 0)
+                this.Balance = balance;
         }
     }
 }
